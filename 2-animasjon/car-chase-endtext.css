@@ -1,0 +1,94 @@
+#style-endtext-container{
+    position: absolute;
+    left: 45vw;        
+}   
+/* 
+Her stileres teksten og gir diven til bokstaven en høy rektangel.
+Formålet her er å lage en "sirkel" av boksene så man får en overskrift som
+fremstilles som sirkuler.
+*/
+.style-endtext{
+    position: absolute;
+    width: 2vw;
+    height: 40vh;
+    z-index: -1;
+    opacity: 0;
+    font-size: 5vw;
+    text-align: center;
+    color: rgb(255, 192, 203);
+    text-shadow: 2px 2px rgb(216, 112, 147);
+    transform-origin: bottom center;
+    animation-name: show-text;
+    animation-duration: 1s;
+    animation-delay: 45s;
+    animation-fill-mode: forwards;
+}
+/* Fikser vinkel på kver bokstav til overskriften */
+#endtext-letter-1{
+    transform: rotateZ(-43deg);
+}
+#endtext-letter-2{
+    transform: rotateZ(-30deg);
+}
+#endtext-letter-3{
+    transform: rotateZ(-20deg);
+}
+#endtext-letter-4{
+    transform: rotateZ(-10deg);
+}
+#endtext-letter-5{
+    transform: rotateZ(-2deg);
+}
+#endtext-letter-6{
+    transform: rotateZ(4deg);
+}
+#endtext-letter-7{
+    transform: rotateZ(10deg);
+}
+#endtext-letter-8{
+    transform: rotateZ(25deg);
+}
+#endtext-letter-9{
+    transform: rotateZ(33deg);
+}
+#endtext-letter-10{
+    transform: rotateZ(40deg);
+}
+/* 
+Stilering og plasering av knappene. Siden jeg bruker a-element
+så fikser jeg stilering på alle stadiene på en "link"
+*/
+#button-container{
+    position: absolute;
+    top: 16vh;
+    left: 37vw;
+    display: flex;
+    flex-direction: column;
+}
+.button-style:link, .button-style:visited {
+    color: rgb(255, 192, 203);
+    margin: 0.5vh;
+    padding: 0.5vh;
+    z-index: -1;
+    font-size: 3vw;
+    text-align: center;
+    text-shadow: 2px 2px rgb(216, 112, 147);
+    text-decoration: none;
+    background-color:rgba(255, 239, 213, 0.762);
+    border-radius: 10px;
+    opacity: 0;
+    animation-name: show-text;
+    animation-duration: 1s;
+    animation-delay: 50s;
+    animation-fill-mode: forwards;
+}
+.button-style:hover, .button-style:active {
+    color: rgb(255, 134, 154);
+    text-shadow: 2px 1px rgb(216, 112, 147);
+    text-decoration: none;
+}   
+/* Gjør alt ovenfor synligt */
+@keyframes show-text{
+    0%{opacity: 0;}
+    100%{opacity: 1; z-index: 10;}
+}

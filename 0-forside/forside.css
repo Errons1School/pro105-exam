@@ -1,0 +1,66 @@
+/* Stilere bakgrund og htmlkropp */
+html, body{
+    margin: 0; 
+    height: 100vh;
+    background-color: rgb(15, 105, 152);
+    overflow: hidden;
+}
+#background{
+    position: absolute;
+    top: 25%;
+    width: 100vw;
+}
+
+/* Stilere overskrift med hvitskrift og skygge */
+#heading{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px rgb(0, 0, 0);
+}
+
+/* Fikser spinn på knapp som leder til del 2 av prosjektet */
+#btn-manual{
+    position: absolute;
+    top: 15%;
+    left: 38%; 
+    width: 5%;
+    transition: transform 1.5s;
+}
+#btn-manual:hover{
+    transform: rotate(360deg);
+} 
+
+/* stilere plaseering og størrelse. hover event som skifter bilde og popper fram snakkeboble */
+.legohead{
+    position: absolute;
+    top: 13%;
+    right: 38%; 
+    width: 6%;
+}
+
+#legohead-smile{
+    z-index: 1;
+    transition: transform opacity 1s;
+}
+
+/*Hover event når legohead knappen skifter til en happy-ansikt*/
+#legohead-smile:hover{
+    transform: scale(1.5);
+    opacity: 0;
+}
+/*Størrelse og plassering av chatboble med overgangseffekt som popper opp når du holder musepeker over den*/
+#chat-bubble{
+    position: absolute;
+    top: 8%;
+    right: 30%;
+    width: 8vw;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#legohead-smile:hover + #chat-bubble{
+    opacity: 1;
+}
+
+
+

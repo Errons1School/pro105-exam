@@ -1,0 +1,60 @@
+
+/* Setter bakgrunnsbilde via CSS. sørger også for at bildet ikke repeater. */
+body{
+    height: 100vh;
+    background-image: url("images/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
+    overflow-y: hidden;
+}
+
+/* css for å endre på H1 (overskrift), setter den i samme farge som overskriften som kommer etter "car-chase" */
+h1{
+    top: 150%;
+    color: rgb(255, 192, 203);
+    text-align: center;
+    text-shadow: 2px 2px  rgb(216, 112, 147) ;
+    font-size: 400%;
+}
+
+/* Bestemmer størrelse og posisjon til politi-bilen */
+#police img{
+    position: absolute;
+    height: 25%;
+    bottom: 5%;
+    left: 15%;
+}
+
+/* Bestemmer størrelse og posisjon til Røver-bilen */
+#thief img{
+    position: absolute;
+    height: 25%;
+    bottom: 5%;
+    left: 60%;
+}
+
+/* Css til knapp. Påvirker posisjoneringen, og farge. Har også lagt til cursor, som gjør at pekeren endrer på
+seg når man holder/hover den over knappen. */
+#start-button{
+    position: absolute;
+    bottom: 15%;
+    left: 45%;
+    width: 6%;
+    height: 12%;
+    color: rgb(0, 0, 255);
+    background-color: rgb(255, 255, 255);
+    border: ridge rgb(0, 0, 255);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* hover animasjon. når man holder peker over så blir elementet større, og bytter farge. begge fargene skal matche hver bil.  */
+#start-button-1 :hover{
+    transform: scale(1.2 , 1.2);
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 0, 0);
+    border: ridge rgb(0, 0, 0);
+}
+

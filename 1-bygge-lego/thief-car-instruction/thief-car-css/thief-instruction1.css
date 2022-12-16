@@ -1,0 +1,211 @@
+html, body {
+    height: 100vh;
+    margin: 0;
+}  
+
+body{
+    background-color: rgb(212, 237, 252);
+}
+
+#container{
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-start;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-div{
+    height: 100vh;
+}   
+
+.page-btn{
+    position: absolute;
+    text-decoration: none;
+    border-radius: 100%;
+    top: 40vh;
+    padding: 1%;
+    font-size: 400%;
+}
+
+.page-btn:hover{
+    background-color: rgb(105, 199, 230);
+    color: rgb(255, 255, 255);
+    box-shadow: 3px 0px 2px 1px rgb(0, 0, 0);
+}
+
+#arrow-left{
+    margin-left: 0;
+    width: 10vw;
+}
+
+#previous-page-btn{
+    left: 5%;
+}
+
+#arrow-right{
+    margin-right: 0;
+    width: 10vw;
+}
+
+#next-page-btn{
+    right: 5%;
+}
+
+#mainpage{
+    position: relative;
+    width: 80vw;
+}
+.legopart-class{
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 15px;
+    background-color: rgb(255, 244, 202);
+
+    margin: 0;
+    top: 5%;
+    width: 42%;
+    height: 25%;
+}
+
+#legopart-1{
+    left: 5%;
+}
+
+#legopart-2{
+    right: 5%;
+}
+
+#main-legpoart{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 5%;
+    right: 5%;
+    width: 80%;
+    height: 60%;
+}
+
+#pagecounter{
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+    font-size: 300%;
+}
+
+.hidden{ /* Gjemmer checkboksen fra HTML siden */
+    display: none;
+}
+
+#checkbox:checked ~* #legobrickImg1{ /* Gjør at de forskjellige animasjonene til de riktige legobitene aktiveres når man aktiverer checkboksen */
+    animation: animation 2s linear forwards;
+}
+
+#checkbox:checked ~* #legobrickImg2{
+    animation: animation2 2.5s linear forwards;
+}
+
+#checkbox:checked ~* #legobrickImg3{
+    animation: animation3 2.3s linear forwards;
+}
+
+#checkbox:checked ~* #legobrickImg4{
+    animation: animation4 2.7s linear forwards;
+}
+
+.legobrick{
+    position: absolute;
+    height: 50%;
+}
+
+#legobrickImg1{ /* Justerer posisjonen til de forskjellige legobrikkene */
+    left: 10%;
+}
+
+#legobrickImg2{
+    left: 60%;
+}
+
+@keyframes animation{ /* Animasjoner til de forskjellige legobrikkene hvor legobrikkene går ned mot hovedbiten i forskjellig tempo */
+    0%{
+        top: 30%;
+        left: 10%;
+    }
+    50%{
+        top: 100%;
+        left: 30%;
+        opacity: 1.5;
+    }
+    100%{
+        top: 200%;
+        left: 50%;
+        opacity: 0;
+    }
+}
+
+@keyframes animation2 {
+    0%{
+        top: 30%;
+        left: 60%;
+    }
+    50%{
+        top: 100%;
+        left: 80%;
+        opacity: 1.5;
+    }
+    100%{
+        top: 200%;
+        left: 100%;
+        opacity: 0;
+    }
+}
+
+#checkbox:checked ~* #legocar-base{
+    animation: disapearingLego 3s linear forwards;
+}
+
+#checkbox:checked ~* #completeLegoCar{
+    animation: appearingLego 3s linear forwards;
+}
+
+.mainLegoPiece{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 60%;
+}
+
+#completeLegoCar{
+    opacity: 0;
+}
+
+#legocar-base{
+    opacity: 1;
+}
+
+@keyframes appearingLego{ /* Gjør at de hovedbiten forsvinner og at den ny "bygde" biten kommer fram */
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes disapearingLego{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}

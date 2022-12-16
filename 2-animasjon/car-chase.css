@@ -1,0 +1,249 @@
+/* Fikser størelse på siden til 100% av skjerm og bakgrundsfarge lyseblå */
+html, body {
+    margin: 0;
+    background-color: rgb(135, 206, 235);
+}
+/* Fjerner scrollbarer på nettsiden og setter bakgrundsbilde til flex */
+body {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+/* Stilering og animasjonstiming på backgroundsbilde */
+.background{
+    z-index: 0;
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    animation-name: moving-background;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+}  
+/* Gjør at backgrunnen overlapper riktig */
+#background-2{
+    left: -0.5%;
+}
+/* Animasjon som gjør at bakgrunnen looper */
+@keyframes moving-background{
+    0% {transform: translateX(0%);}
+    100% {transform: translateX(-100%);}
+}
+
+/* Stilere og trigger animasjon for hovedbilene */
+.main-car{
+    z-index: 1;
+    position: absolute;
+    height: 17vh;
+}
+#policecar{
+    bottom: 3%;
+    left: 5%; 
+    animation-name: general-car-motion, maincar-police;
+    animation-delay: 0s, 0s;
+    animation-iteration-count: infinite, 1;
+    animation-duration: 4s, 60s;
+    animation-timing-function: linear, linear;
+    animation-fill-mode: forwards, forwards;
+}
+#theifcar{
+    bottom: 3%;
+    left: 25%;
+    animation-name: general-car-motion, maincar-theif, maincar-theif-ending;
+    animation-delay: 0s, 0s, 66s;
+    animation-iteration-count: infinite, 1, infinite;
+    animation-duration: 4s, 60s, 10s;
+    animation-timing-function: linear, linear, linear;
+    animation-fill-mode: forwards, forwards, none;
+}
+#angry-banana-pale{
+    position: absolute;
+    height: 10vh;
+    top: 60vh;
+    right: 30%;
+    opacity: 0;
+    animation-name: throw-banana;
+    animation-duration: 1s;
+    animation-delay: 41s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+}
+@keyframes throw-banana{
+    0%{opacity: 1;}
+    50%{top: 50vh;}
+    99%{opacity: 1;}
+    100%{top: 60vh; right: 40%; opacity: 0; transform: rotateZ(720deg);}
+}
+@keyframes maincar-police{
+    0%{bottom: 3%;}
+    10%{bottom: 3%; transform: rotateZ(-5deg);}
+    12%{bottom: 27%; transform: rotateZ(-20deg)}
+    13%{bottom: 27%; transform: rotateZ(0deg)}
+    18%{bottom: 27%; transform: rotateZ(5deg)}
+    21%{bottom: 15%; transform: rotateZ(20deg)}
+    23%{bottom: 3%; transform: rotateZ(0deg)}
+    30%{bottom: 3%; transform: rotateZ(-5deg)}
+    32%{bottom: 15%; transform: rotateZ(-20deg)}
+    34%{bottom: 15%; transform: rotateZ(0deg)}
+    35%{bottom: 15%; transform: rotateZ(-5deg);}
+    36%{bottom: 27%; transform: rotateZ(-20deg);}
+    38%{bottom: 27%; transform: rotateZ(0deg);}
+    39%{bottom: 27%; transform: rotateZ(5deg);}
+    40%{bottom: 3%; transform: rotateZ(20deg);}
+    41%{bottom: 3%; transform: rotateZ(0deg);}
+    43%{bottom: 3%; transform: rotateZ(-5deg);}
+    44%{bottom: 27%; transform: rotateZ(-20deg);}
+    46%{bottom: 27%; transform: rotateZ(0deg);}
+    54%{bottom: 27%; transform: rotateZ(5deg);}
+    55%{bottom: 15%; transform: rotateZ(20deg);}
+    56%{bottom: 3%; transform: rotateZ(0deg);}
+    59%{bottom: 3%; transform: rotateZ(-5deg);}
+    60%{bottom: 15%; transform: rotateZ(-20deg);}
+    61%{bottom: 15%; transform: rotateZ(0deg);}
+    68%{left: 5%; bottom: 15%; transform: rotateZ(0deg);}
+    70%{left: 50%; bottom: 27%; transform: rotateZ(0deg);}
+    73%{left: -25%; bottom: 15%; transform: rotateZ(1800deg) rotateY(720deg);}
+    100%{left: -25%;}
+}
+@keyframes maincar-theif{
+    0%{bottom: 3%;}
+    8%{bottom: 3%; transform: rotateZ(-5deg);}
+    10%{bottom: 27%; transform: rotateZ(-20deg);}
+    11%{bottom: 27%; transform: rotateZ(0deg);}
+    17%{bottom: 27%; transform: rotateZ(5deg);}
+    20%{bottom: 15%; transform: rotateZ(20deg);}
+    22%{bottom: 3%; transform: rotateZ(0deg);}
+    29%{bottom: 3%; transform: rotateZ(-5deg);}
+    31%{bottom: 15%; transform: rotateZ(-20deg);}
+    33%{bottom: 15%; transform: rotateZ(0deg);}
+    34%{bottom: 15%; transform: rotateZ(-5deg);}
+    35%{bottom: 27%; transform: rotateZ(-20deg);}
+    36%{bottom: 27%; transform: rotateZ(0deg);}
+    37%{bottom: 27%; transform: rotateZ(5deg);}
+    38%{bottom: 3%; transform: rotateZ(20deg);}
+    39%{bottom: 3%; transform: rotateZ(0deg);}
+    42%{bottom: 3%; transform: rotateZ(-5deg);}
+    43%{bottom: 27%; transform: rotateZ(-20deg);}
+    45%{bottom: 27%; transform: rotateZ(0deg);}
+    52%{bottom: 27%; transform: rotateZ(5deg);}
+    53%{bottom: 15%; transform: rotateZ(20deg);}
+    54%{bottom: 3%; transform: rotateZ(0deg);}
+    58%{bottom: 3%; transform: rotateZ(-5deg);}
+    59%{bottom: 15%; transform: rotateZ(-20deg);}
+    60%{bottom: 15%; transform: rotateZ(0deg);}
+    65%{left: 25%; bottom: 15%; transform: rotateZ(0deg);}
+    70%{left: 65%; bottom: 27%; transform: rotateZ(0deg);}
+    72%{bottom: 27%; transform: rotateZ(5deg);}
+    74%{left: 25%; bottom: 15%; transform: rotateZ(10deg);}
+    76%{bottom: 15%; transform: rotateZ(0deg);}
+    85%{bottom: 3%;}
+    90%{bottom: 27%;}
+    100%{bottom: 3%;}
+}
+@keyframes maincar-theif-ending{
+    0%{bottom: 3%;}
+    25%{bottom: 27%;}
+    50%{bottom: 3%;}
+    75%{bottom: 27%;}
+    100%{bottom: 3%;}
+}
+/* stilering og animasjon for alle generiske biler */
+.generic-car{
+    z-index: 1;
+    position: absolute;
+    height: 17vh;
+    left: 130%;
+    animation-name: generic-car, general-car-motion;
+    animation-duration: 8s, 4s;
+    animation-iteration-count: initial, infinite;
+    animation-direction: normal, normal;
+    animation-timing-function: linear, linear;
+}
+#generic-car-1{
+    bottom: 27%;
+    animation-delay: 0s;
+}
+#generic-car-2{
+    height: 25%;
+    bottom: 3%;
+    animation-delay: 2s;
+}
+#generic-car-3{
+    bottom: 27%;
+    animation-delay: 9s;
+}
+#generic-car-4{
+    bottom: 3%;
+    animation-delay: 17s;
+}
+#generic-car-5{
+    bottom: 27%;
+    animation-delay: 18.5s;
+}
+#generic-car-6{
+    height: 25%;
+    bottom: 3%;
+    animation-delay: 23s;
+}
+#generic-car-7{
+    bottom: 27%;
+    animation-delay: 28s;
+}
+#generic-car-8{
+    bottom: 3%;
+    animation-delay: 37s;
+}
+#generic-car-9{
+    bottom: 27%;
+    animation-delay: 46s;
+}
+#generic-car-10{
+    height: 25%;
+    bottom: 27%;
+    animation-delay: 55s;
+}
+@keyframes generic-car{
+    0% {left: 130%;}
+    100% {left: -40%;}
+}
+/* Gir alle biler en liten "vugge" effekt */
+@keyframes general-car-motion{
+    25% {transform: translateY(10%);}
+    50% {transform: translateY(0%);}
+    75% {transform: translateY(-10%);}
+    100% {transform: translateY(0%);}
+}
+/* Stilere og timer en loop med generiske biler på slutten */
+.generic-car-ending{
+    z-index: 1;
+    position: absolute;
+    height: 17vh;
+    left: 130%;
+    animation-name: ending-loop;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: linear;
+}
+#generic-car-ending-1{
+    bottom: 27%;
+    animation-delay: 60s;
+}
+#generic-car-ending-2{
+    bottom: 3%;
+    animation-delay: 62.5s;
+}       
+#generic-car-ending-3{
+    height: 25%;
+    bottom: 27%;
+    animation-delay: 65s;
+}
+#generic-car-ending-4{
+    bottom: 3%;
+    animation-delay: 67.5s;
+} 
+@keyframes ending-loop{
+    0% {left: 130%;}
+    100% {left: -40%;}
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego</title>
+    <link rel="stylesheet" href="../police-car-css/police-instruction1.css">
+    <link rel="icon" href="../../../lego-logo/lego-logo.png">
+</head>
+<body>
+
+    <!-- De neste sidene på både police og thief er veldig repetetive, derfor skjer mesteparten av kommenteringen på dette html arket og tillhørende css side. -->
+    <div id="container">
+        <div id="arrow-left" class="main-div">
+            <a href="" id="previous-page-btn" class="page-btn"></a>
+        </div>
+
+        <div id="mainpage" class="main-div">            
+            <label for="checkbox"> <!-- Lager en checkbox som man kan krysse av -->
+                <input type="checkbox" class="hidden" id="checkbox">
+                    <div id="legopart-1" class="legopart-class"> <!-- I validering får vi feil på denne div boksen og på main-legopoart div boks, men vi gikk ut ifra det vi har blitt undervist -->
+                        <img src="../../images/police-car/police-car-base-1-part-1.png" id="legobrickImg1" class="legobrick" alt="part-1">
+                        <img src="../../images/police-car/police-car-base-1-part-2.png" id="legobrickImg2" class="legobrick" alt="part-2">
+                    </div>
+
+                    <div id="main-legpoart">
+                        <img src="../../images/police-car/police-car-base-1.png" id="legocar-base" class="mainLegoPiece" alt="Lego-piece">
+                        <img src="../../images/police-car/police-car-base-2.png" id="completeLegoCar" class="mainLegoPiece" alt="Lego-piece">
+                    </div>
+            </label>
+
+            <div id="pagecounter">
+                Side 1
+            </div>
+        </div>
+        
+        <div id="arrow-right" class="main-div">
+            <a href="../police-car-html/police-instruction2.html" id="next-page-btn" class="page-btn">&#x0003E;</a>
+        </div>
+    </div>
+    
+</body>
+</html>

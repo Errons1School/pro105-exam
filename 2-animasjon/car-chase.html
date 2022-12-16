@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lego</title>
+    <!-- Hoved CSS dokument for bakground og biler -->
+    <link rel="stylesheet" href="car-chase.css">
+
+    <!-- CSS dokument for alt konfetti som faller -->
+    <link rel="stylesheet" href="car-chase-confetti.css">
+
+    <!-- CSS dokument for overskrift og knapper som kommer fram på slutten -->
+    <link rel="stylesheet" href="car-chase-endtext.css">
+    
+    <!-- kode for at de skal havne en lego-logo på fanen -->
+    <link id="Lego-logo" rel="icon" href="../lego-logo/lego-logo.png">
+</head>
+<body>
+
+    <!-- Lydfiler som autospiller av ved innlsatning -->
+    <audio src="sound/highway-1.mp3" autoplay preload="metadata"></audio>
+    <audio src="sound/police-siren.mp3" autoplay preload="metadata"></audio>
+    
+    <!-- Bakground som er i lup -->
+    <img id="background-1" class="background" src="images/background.png" alt="background">
+    <img id="background-2" class="background" src="images/background.png" alt="background">
+    
+    <!-- Politibil og røverbil som kjører + bananskall -->
+    <img id="policecar" class="main-car" src="images/policecar.png" alt="policecar">
+    <img id="theifcar" class="main-car" src="images/theifcar.png" alt="theifcar">
+    <img id="angry-banana-pale" src="images/angrybanana.png" alt="angry-banana-pale">
+
+    <!-- Generisk biler som kommer med motorveilyd -->
+    <img id="generic-car-1" class="generic-car" src="images/generic-car-2.png" alt="generic-car-2">
+    <img id="generic-car-2" class="generic-car" src="images/generic-car-3.png" alt="generic-car-3">
+    <img id="generic-car-3" class="generic-car" src="images/generic-car-1.png" alt="generic-car-1">
+    <img id="generic-car-4" class="generic-car" src="images/generic-car-4.png" alt="generic-car-4">
+    <img id="generic-car-5" class="generic-car" src="images/generic-car-1.png" alt="generic-car-1">
+    <img id="generic-car-6" class="generic-car" src="images/generic-car-3.png" alt="generic-car-3">
+    <img id="generic-car-7" class="generic-car" src="images/generic-car-2.png" alt="generic-car-2">
+    <img id="generic-car-8" class="generic-car" src="images/generic-car-2.png" alt="generic-car-2">
+    <img id="generic-car-9" class="generic-car" src="images/generic-car-1.png" alt="generic-car-1">
+    <img id="generic-car-10" class="generic-car" src="images/generic-car-3.png" alt="generic-car-3">
+
+    <!-- Generisk biler som luper ved slutten av animasjonen -->
+    <img id="generic-car-ending-1" class="generic-car-ending" src="images/generic-car-1.png" alt="generic-car-ending-1">
+    <img id="generic-car-ending-2" class="generic-car-ending" src="images/generic-car-2.png" alt="generic-car-ending-2">
+    <img id="generic-car-ending-3" class="generic-car-ending" src="images/generic-car-3.png" alt="generic-car-ending-3">
+    <img id="generic-car-ending-4" class="generic-car-ending" src="images/generic-car-4.png" alt="generic-car-ending-4">
+
+    <!-- Div-bokser som er konfetti -->
+    <div id="container-1" class="container">  
+        <div class="confetti">
+            <div class="ellipse-3"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="ellipse-2"></div>
+            <div class="rectangle-1"></div>
+            <div class="ellipse-3"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-4"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-5"></div>
+            <div class="rectangle-4"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-1"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-3"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="ellipse-3"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-3"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-2"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-2"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="ellipse-5"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-4"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-4"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-3"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-1"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-4"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-3"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-2"></div>
+        </div>
+        <div class="confetti">
+            <div class="ellipse-1"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-5"></div>
+        </div>
+    </div>
+    <div id="container-2" class="container">
+        <div class="confetti">
+            <div class="ellipse-2"></div>
+            <div class="rectangle-1"></div>
+            <div class="ellipse-3"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-4"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-5"></div>
+            <div class="rectangle-4"></div>
+        </div>
+        <div class="confetti">
+            <div class="ellipse-3"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-1"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-3"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-2"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-3"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-1"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-4"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-2"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="ellipse-5"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-4"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="ellipse-3"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-3"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-4"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="ellipse-1"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-3"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-2"></div>
+        </div>
+    </div>
+    <div id="container-3" class="container">
+        <div class="confetti">
+            <div class="ellipse-2"></div>
+            <div class="rectangle-1"></div>
+            <div class="ellipse-3"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-4"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-5"></div>
+            <div class="rectangle-4"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-1"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-3"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="ellipse-3"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-3"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-2"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="ellipse-3"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-2"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="ellipse-5"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-4"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-3"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-1"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-4"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-3"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-5"></div>
+            <div class="ellipse-2"></div>
+        </div>
+        <div class="confetti">
+            <div class="rectangle-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-1"></div>
+            <div class="rectangle-5"></div>
+            <div class="rectangle-4"></div>
+            <div class="ellipse-4"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+        </div>
+        <div class="confetti">
+            <div class="ellipse-1"></div>
+            <div class="rectangle-1"></div>
+            <div class="rectangle-2"></div>
+            <div class="ellipse-2"></div>
+            <div class="rectangle-3"></div>
+            <div class="ellipse-3"></div>
+            <div class="ellipse-5"></div>
+            <div class="ellipse-4"></div>
+            <div class="rectangle-4"></div>
+            <div class="rectangle-5"></div>
+        </div>
+    </div>
+
+    <!-- Overskrift og knapper ved slutten av animasjonen -->
+    <div id="style-endtext-container">
+        <div id="endtext-letter-1" class="style-endtext">E</div>
+        <div id="endtext-letter-2" class="style-endtext">n</div>
+        <div id="endtext-letter-3" class="style-endtext">d</div>
+        <div id="endtext-letter-4" class="style-endtext">e</div>
+        <div id="endtext-letter-5" class="style-endtext">l</div>
+        <div id="endtext-letter-6" class="style-endtext">i</div>
+        <div id="endtext-letter-7" class="style-endtext">g</div>
+        <div id="endtext-letter-8" class="style-endtext">f</div>
+        <div id="endtext-letter-9" class="style-endtext">r</div>
+        <div id="endtext-letter-10" class="style-endtext">i</div>
+    </div>
+
+    <div id="button-container">
+        <a href="../0-forside/forside.html" class="button-style">Forside</a>
+        <a href="../1-bygge-lego/police-car-instruction/police-car-html/police-instruction1.html" class="button-style">Bygge på nytt</a>
+        <a href="car-chase.html" class="button-style">Leke på nytt</a>
+    </div>
+
+</body>
+</html>
